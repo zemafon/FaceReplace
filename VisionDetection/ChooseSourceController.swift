@@ -27,7 +27,17 @@ class ChooseSourceController: UIViewController {
     }
     
     func showVideo(index: Int) {
+        let url: URL?
+        switch index {
+        case 1:
+            url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
+        default:
+            url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
+        }
         
+        guard let videoURL = url else { return }
+        
+        showFaceReplaceController(url: videoURL)
     }
     
     func showFaceReplaceController(url: URL) {
