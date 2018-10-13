@@ -37,6 +37,9 @@ class ChooseSourceController: UIViewController {
         case 2:
             url = URL(string: "https://meta.vcdn.biz/7019e575ad8d00a0b56d563724c3a1c5_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/86931/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
             seekTime = 0
+        case 3:
+            url = URL(string: "https://meta.vcdn.biz/ad923838d11b920339972b2c35684cb7_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/91341/u_uid/7032521/u_vod/3/u_device/hackathon18/a/0/type.amlst/playlist.m3u8")
+            seekTime = 0
         default:
             url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
             seekTime = 0
@@ -101,6 +104,8 @@ extension ChooseSourceController: UITableViewDataSource {
             cellTitle = "From Parise with love"
         case 2:
             cellTitle = "Rambo"
+        case 3:
+            cellTitle = "Judge Dredd"
         default:
             cellTitle = ""
         }

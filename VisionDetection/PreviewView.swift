@@ -13,6 +13,8 @@ import AVFoundation
 class PreviewView: UIView {
     
     private var maskLayer = [CAShapeLayer]()
+    private var faceMaskLayer = [CALayer]()
+    var faceImage: UIImage?
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -67,6 +69,27 @@ class PreviewView: UIView {
         let facebounds = face.boundingBox.applying(translate).applying(transform)
         
         return addFaceLayer(in: facebounds)
+    }
+    
+    func drawFaceImage(face: VNFaceObservation) -> CALayer? {
+        let transform = CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -frame.height)
+        
+        let translate = CGAffineTransform.identity.scaledBy(x: frame.width, y: frame.height)
+        
+        // The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
+        let facebounds = face.boundingBox.applying(translate).applying(transform)
+        var faceLayer: CALayer? = nil
+        if let image = faceImage {
+            faceLayer = CALayer()
+            faceLayer!.frame = facebounds
+            faceLayer!.cornerRadius = facebounds.width / 2
+            faceLayer!.contents = image.cgImage
+            faceLayer!.masksToBounds = true
+            layer.addSublayer(faceLayer!)
+            faceMaskLayer.append(faceLayer!)
+        }
+        
+        return faceLayer
     }
     
     func drawFaceWithLandmarks(face: VNFaceObservation) ->CAShapeLayer {
@@ -148,6 +171,12 @@ class PreviewView: UIView {
         for mask in maskLayer {
             mask.removeFromSuperlayer()
         }
+        
+        for mask in faceMaskLayer {
+            mask.removeFromSuperlayer()
+        }
+        
+        faceMaskLayer.removeAll()
         maskLayer.removeAll()
     }
     

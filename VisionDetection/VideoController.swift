@@ -121,7 +121,7 @@ extension VideoController {
         else {
             
             for face in observations {
-                _ = self.previewView.drawFaceWithLandmarks(face: face)
+                _ = self.previewView.drawFaceImage(face: face)
             }
         }
     }
@@ -145,8 +145,10 @@ extension VideoController : RSKImageCropViewControllerDelegate {
     }
     
     func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
+        previewView.faceImage = croppedImage
+        updateInputSourceConfiguration()
         dismiss(animated: true) {
-            
+            self.previewView.layoutSubviews()
         }
     }
 }
