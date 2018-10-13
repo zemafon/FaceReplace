@@ -12,6 +12,7 @@
 		02611D991EEA5317009714B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02611D971EEA5317009714B8 /* Main.storyboard */; };
 		02611D9E1EEA5317009714B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02611D9C1EEA5317009714B8 /* LaunchScreen.storyboard */; };
 		02611DA61EEA5683009714B8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02611DA51EEA5683009714B8 /* PreviewView.swift */; };
+		0A845482B679F89D40E59866 /* Pods_VisionDetection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D6C89699BAEBA68A2E0DDF /* Pods_VisionDetection.framework */; };
 		A68E0C212170B1B80092AFA9 /* IputSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E0C202170B1B80092AFA9 /* IputSourceConfiguration.swift */; };
 		A68E0C232170EA390092AFA9 /* CameraIputSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E0C222170EA390092AFA9 /* CameraIputSourceConfiguration.swift */; };
 		A68E0C252170FE380092AFA9 /* MovieIputSourceConfiguratio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E0C242170FE380092AFA9 /* MovieIputSourceConfiguratio.swift */; };
@@ -29,11 +30,14 @@
 		02611D9D1EEA5317009714B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02611D9F1EEA5317009714B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02611DA51EEA5683009714B8 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		4FEEC175D2B8CA7D0A9BA08C /* Pods-VisionDetection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionDetection.release.xcconfig"; path = "Target Support Files/Pods-VisionDetection/Pods-VisionDetection.release.xcconfig"; sourceTree = "<group>"; };
+		58D6C89699BAEBA68A2E0DDF /* Pods_VisionDetection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionDetection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A68E0C202170B1B80092AFA9 /* IputSourceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IputSourceConfiguration.swift; sourceTree = "<group>"; };
 		A68E0C222170EA390092AFA9 /* CameraIputSourceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraIputSourceConfiguration.swift; sourceTree = "<group>"; };
 		A68E0C242170FE380092AFA9 /* MovieIputSourceConfiguratio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieIputSourceConfiguratio.swift; sourceTree = "<group>"; };
 		A68E0C2A217190810092AFA9 /* Video_001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video_001.mp4; sourceTree = "<group>"; };
 		A68E0C2C2171B8200092AFA9 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		E351DFB82A8B67F9777DD149 /* Pods-VisionDetection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionDetection.debug.xcconfig"; path = "Target Support Files/Pods-VisionDetection/Pods-VisionDetection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A845482B679F89D40E59866 /* Pods_VisionDetection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				02611D921EEA5317009714B8 /* VisionDetection */,
 				02611D911EEA5317009714B8 /* Products */,
+				CA75292FA04A0EF0C279FDBD /* Pods */,
+				F90F64915E795D19961A922A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +89,24 @@
 			path = VisionDetection;
 			sourceTree = "<group>";
 		};
+		CA75292FA04A0EF0C279FDBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E351DFB82A8B67F9777DD149 /* Pods-VisionDetection.debug.xcconfig */,
+				4FEEC175D2B8CA7D0A9BA08C /* Pods-VisionDetection.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F90F64915E795D19961A922A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58D6C89699BAEBA68A2E0DDF /* Pods_VisionDetection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02611DA21EEA5317009714B8 /* Build configuration list for PBXNativeTarget "VisionDetection" */;
 			buildPhases = (
+				BF49B3AE876D9F68CCDD92EE /* [CP] Check Pods Manifest.lock */,
 				02611D8C1EEA5317009714B8 /* Sources */,
 				02611D8D1EEA5317009714B8 /* Frameworks */,
 				02611D8E1EEA5317009714B8 /* Resources */,
+				84B11B502342862B4A603DDC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +180,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84B11B502342862B4A603DDC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF49B3AE876D9F68CCDD92EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VisionDetection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02611D8C1EEA5317009714B8 /* Sources */ = {
@@ -304,6 +378,7 @@
 		};
 		02611DA31EEA5317009714B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E351DFB82A8B67F9777DD149 /* Pods-VisionDetection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -323,6 +398,7 @@
 		};
 		02611DA41EEA5317009714B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FEEC175D2B8CA7D0A9BA08C /* Pods-VisionDetection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
