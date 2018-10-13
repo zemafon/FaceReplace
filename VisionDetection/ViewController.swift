@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import RSKImageCropper
 
 class ViewController: UIViewController {
     @IBOutlet weak var sourceTypeSegmentedControl : UISegmentedControl!
@@ -96,8 +97,28 @@ class ViewController: UIViewController {
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        dismiss(animated: true) {
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                let cropController = RSKImageCropViewController(image: pickedImage)
+                cropController.delegate = self
+                self.present(cropController, animated: true, completion: nil)
+            }
+        }
     }
+}
+
+extension ViewController : RSKImageCropViewControllerDelegate {
+    func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
+        dismiss(animated: true) {
+            
+        }
+    }
+    
+    
 }
 
 extension ViewController {
