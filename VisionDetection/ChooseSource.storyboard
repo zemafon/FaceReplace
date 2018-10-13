@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s5f-Ym-SiJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choose Source Controller-->
+        <scene sceneID="MU0-a0-4IT">
+            <objects>
+                <viewController id="s5f-Ym-SiJ" customClass="ChooseSourceController" customModule="VisionDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YcN-Bv-Spl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-2s-jo3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="CGA-Ms-7FB">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CGA-Ms-7FB" id="Kdq-VG-9FM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="s5f-Ym-SiJ" id="MsV-l1-5Ip"/>
+                                    <outlet property="delegate" destination="s5f-Ym-SiJ" id="TDy-Q2-fcM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rhj-2s-jo3" firstAttribute="top" secondItem="6HN-BD-IZ4" secondAttribute="top" constant="44" id="0EB-Ks-f8R"/>
+                            <constraint firstItem="6HN-BD-IZ4" firstAttribute="trailing" secondItem="Rhj-2s-jo3" secondAttribute="trailing" id="3K1-BI-4xl"/>
+                            <constraint firstItem="Rhj-2s-jo3" firstAttribute="leading" secondItem="6HN-BD-IZ4" secondAttribute="leading" id="4LZ-5c-ucW"/>
+                            <constraint firstItem="6HN-BD-IZ4" firstAttribute="bottom" secondItem="Rhj-2s-jo3" secondAttribute="bottom" id="bVs-dl-Esz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6HN-BD-IZ4"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Rhj-2s-jo3" id="GqR-FA-4BB"/>
+                        <segue destination="wa9-We-p2D" kind="show" identifier="showVideo" id="uRc-FZ-5Wp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38u-6L-Ndl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="73"/>
+        </scene>
+        <!--Video Controller-->
+        <scene sceneID="amM-Li-5db">
+            <objects>
+                <viewController id="wa9-We-p2D" customClass="VideoController" customModule="VisionDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o8C-SP-hoX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-yo-Dvr" customClass="PreviewView" customModule="VisionDetection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6I-uj-Hw1">
+                                <rect key="frame" x="337" y="293" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="plussButtonTap:" destination="wa9-We-p2D" eventType="touchUpInside" id="Jw2-dQ-jtS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CG6-9D-NAn">
+                                <rect key="frame" x="337" y="358.5" width="30" height="30"/>
+                                <state key="normal" title="*"/>
+                                <connections>
+                                    <action selector="shareButtonTap:" destination="wa9-We-p2D" eventType="touchUpInside" id="KqV-M8-B0X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CG6-9D-NAn" firstAttribute="centerY" secondItem="kCs-wp-dkL" secondAttribute="centerY" constant="30" id="2oj-8f-9gT"/>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="Neu-yo-Dvr" secondAttribute="trailing" id="4ds-0Z-gZO"/>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="top" secondItem="Neu-yo-Dvr" secondAttribute="top" constant="20" id="AXR-Tg-UNN"/>
+                            <constraint firstItem="Neu-yo-Dvr" firstAttribute="leading" secondItem="kCs-wp-dkL" secondAttribute="leading" id="LaW-k0-xMb"/>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="bottom" secondItem="Neu-yo-Dvr" secondAttribute="bottom" id="RBw-R2-agG"/>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="CG6-9D-NAn" secondAttribute="trailing" constant="8" id="V5O-wI-evv"/>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="d6I-uj-Hw1" secondAttribute="trailing" constant="8" id="XM4-UE-bPw"/>
+                            <constraint firstItem="d6I-uj-Hw1" firstAttribute="centerY" secondItem="kCs-wp-dkL" secondAttribute="centerY" constant="-30" id="ra5-94-9SB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kCs-wp-dkL"/>
+                    </view>
+                    <connections>
+                        <outlet property="plusButton" destination="d6I-uj-Hw1" id="qyP-lt-uKX"/>
+                        <outlet property="previewView" destination="Neu-yo-Dvr" id="lAa-AX-nFt"/>
+                        <outlet property="recButton" destination="CG6-9D-NAn" id="zmo-wb-m1B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTf-Vz-9JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="73"/>
+        </scene>
+    </scenes>
+</document>
