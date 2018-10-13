@@ -12,6 +12,7 @@ import Metal
 import MetalKit
 import MetalPerformanceShaders
 import CoreMedia
+import AVFoundation
 
 internal class MovieViewerController: UIViewController {
 
@@ -19,8 +20,23 @@ internal class MovieViewerController: UIViewController {
         return self.view as! MetalView
     }()
 
-    let moviewSourceTracker = MovieIputSourceConfiguration()
+    let moviewSourceTracker: MovieIputSourceConfiguration! = {
 
+        var source: MovieIputSourceConfiguration? = nil
+
+        guard let videoURL = Bundle.main.url(forResource: "Video_001", withExtension:"mp4") else {
+            print("MovieIputSourceConfiguration initialisation fail")
+            return source
+        }
+
+        let player = AVPlayer(url:videoURL)
+
+        source = MovieIputSourceConfiguration(player:player, videoURL
+            :videoURL)
+//        source!.handleBufferFrame = self.fetchFrameBuffer
+
+        return source!
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +68,7 @@ internal class MovieViewerController: UIViewController {
         moviewSourceTracker.stop()
     }
 
-    @objc private func fetchFrameBuffer (pixelBuffer: CVPixelBuffer, time: CMTime) {
+    func fetchFrameBuffer (pixelBuffer: CVPixelBuffer, time: CMTime) {
         self.canvas.pixelBuffer = pixelBuffer
         self.canvas.inputTime = time.seconds
     }

@@ -19,7 +19,7 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
     var player: AVPlayer
     var videoURL: URL
 
-    public var handleBufferFrame MovieIputSourceTrackingHandler
+    public var handleBufferFrame: MovieIputSourceTrackingHandler?
 
     lazy var concretLayer: AVPlayerLayer! = {
         return self.sourceVideoLayer as! AVPlayerLayer
@@ -36,6 +36,7 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
     init(player: AVPlayer, videoURL: URL) {
         self.player = player
         self.videoURL = videoURL
+
         super.init()
     }
 
