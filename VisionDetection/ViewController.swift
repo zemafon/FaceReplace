@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var sourceTypeSegmentedControl : UISegmentedControl!
     @IBOutlet weak var trackingTypeSegmentedControl : UISegmentedControl!
     @IBOutlet weak var previewView: PreviewView!
-    @IBOutlet weak var plussButton: UIButton!
+    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var recButton: UIButton!
 
     var sourceType: InputSourceType?
     var documentInteractionController: UIDocumentInteractionController!
@@ -95,6 +96,9 @@ class ViewController: UIViewController {
                         
                         view.fillView(subView: playerView)
                         playerController.contentOverlayView?.fillView(subView: previewView)
+                        
+                        view.bringSubviewToFront(plusButton)
+                        view.bringSubviewToFront(recButton)
                     }
                     if let player = self.playerController.player {
                         self.videoSourcefaceTracker = MovieIputSourceConfiguration(player: player, videoURL: self.videoURL)
@@ -123,7 +127,8 @@ class ViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         imagePicker.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.present(imagePicker, animated: false, completion: nil)
+        imagePicker.modalPresentationStyle = .overCurrentContext
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func shareButtonTap(_ sender: UIButton) {
