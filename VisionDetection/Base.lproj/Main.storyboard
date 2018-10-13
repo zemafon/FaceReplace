@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VisionDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-kI-TMg" customClass="PreviewView" customModule="VisionDetection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7YZ-vr-Fv9">
+                                <rect key="frame" x="16" y="28" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Camera"/>
+                                    <segment title="Video"/>
+                                </segments>
+                                <connections>
+                                    <action selector="UpdateDetectionType:" destination="BYZ-38-t0r" eventType="valueChanged" id="e32-ep-3V4"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6z8-Eo-Ydy">
+                                <rect key="frame" x="16" y="61" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Rectangle"/>
+                                    <segment title="Landmark"/>
+                                </segments>
+                                <connections>
+                                    <action selector="UpdateDetectionType:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wgk-tt-YUK"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6z8-Eo-Ydy" firstAttribute="top" secondItem="7YZ-vr-Fv9" secondAttribute="bottom" constant="5" id="5aN-cr-olT"/>
+                            <constraint firstItem="7YZ-vr-Fv9" firstAttribute="trailing" secondItem="6z8-Eo-Ydy" secondAttribute="trailing" id="EMB-D9-tyx"/>
+                            <constraint firstItem="DJU-kI-TMg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ES9-a1-1HG"/>
+                            <constraint firstItem="7YZ-vr-Fv9" firstAttribute="leading" secondItem="6z8-Eo-Ydy" secondAttribute="leading" id="H5q-8V-CCv"/>
+                            <constraint firstItem="7YZ-vr-Fv9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="K5d-K8-r4V"/>
+                            <constraint firstItem="7YZ-vr-Fv9" firstAttribute="centerX" secondItem="DJU-kI-TMg" secondAttribute="centerX" id="OT9-DU-kGc"/>
+                            <constraint firstItem="DJU-kI-TMg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eQU-Sm-2G5"/>
+                            <constraint firstItem="7YZ-vr-Fv9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="f8x-ww-Ush"/>
+                            <constraint firstItem="7YZ-vr-Fv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lxl-EF-mw9"/>
+                            <constraint firstItem="DJU-kI-TMg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tPL-57-auH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="DJU-kI-TMg" id="0gd-Nq-oNQ"/>
+                        <outlet property="sourceTypeSegmentedControl" destination="7YZ-vr-Fv9" id="i1X-Mh-jT1"/>
+                        <outlet property="trackingTypeSegmentedControl" destination="6z8-Eo-Ydy" id="2Oj-yL-yKs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
