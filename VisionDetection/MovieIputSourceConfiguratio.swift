@@ -13,16 +13,9 @@ import Vision
 class MovieIputSourceConfiguration: IputSourceConfiguration
 {
     private static var videoItemStatusChangedContext = 0
-
-    lazy var videoURL: URL! = {
-        return Bundle.main.url(forResource:"Video_001.mp4", withExtension:nil )!
-    }()
-
-    lazy var player: AVPlayer! = {
-        guard let videoURL = self.videoURL else { return nil }
-
-        return AVPlayer(url: videoURL)
-    }()
+    
+    var player: AVPlayer
+    var videoURL: URL
 
     lazy var concretLayer: AVPlayerLayer! = {
         return self.sourceVideoLayer as! AVPlayerLayer
@@ -35,6 +28,12 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
     }()
 
     let sequenceRequestHandler = VNSequenceRequestHandler()
+    
+    init(player: AVPlayer, videoURL: URL) {
+        self.player = player
+        self.videoURL = videoURL
+        super.init()
+    }
 
     public override func setupSpecifiсSourceConfiguration() {
         super.setupSpecifiсSourceConfiguration()

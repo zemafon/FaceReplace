@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 import Vision
 import RSKImageCropper
 
@@ -19,6 +20,17 @@ class ViewController: UIViewController {
 
     var sourceType: InputSourceType?
     var documentInteractionController: UIDocumentInteractionController!
+    
+    lazy var videoURL: URL! = {
+        return URL(string: "https://meta.vcdn.biz/df7a6c60c107065325b8f3d32cc36df8_megogo/vod/hls/b/450_900_1350_1500_2000_5000/u_sid/0/o/49343961/u_uid/7032521/u_vod/0/u_device/hackathon18/a/0/type.amlst/playlist.m3u8")
+    }()
+    
+    lazy var playerController: AVPlayerViewController! = {
+        guard let videoURL = self.videoURL else { return nil }
+        let playerController = AVPlayerViewController()
+        playerController.player = AVPlayer(url: videoURL)
+        return playerController
+    }()
 
     private var videoSourcefaceTracker: IputSourceConfiguration? {
         didSet {
@@ -72,7 +84,21 @@ class ViewController: UIViewController {
                     self.videoSourcefaceTracker = CameraIputSourceConfiguration()
                     break;
                 case .movie:
-                    self.videoSourcefaceTracker = MovieIputSourceConfiguration()
+                    
+                    if let playerView = playerController.view {
+                        addChild(playerController)
+                        willMove(toParent: self)
+                        playerView.translatesAutoresizingMaskIntoConstraints = false
+                        view.addSubview(playerView)
+                        playerController.contentOverlayView?.addSubview(previewView)
+                        didMove(toParent: self)
+                        
+                        view.fillView(subView: playerView)
+                        playerController.contentOverlayView?.fillView(subView: previewView)
+                    }
+                    if let player = self.playerController.player {
+                        self.videoSourcefaceTracker = MovieIputSourceConfiguration(player: player, videoURL: self.videoURL)
+                    }
                     break;
                 }
 

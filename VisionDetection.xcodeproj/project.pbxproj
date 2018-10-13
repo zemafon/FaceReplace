@@ -19,6 +19,7 @@
 		A68E0C2721718D510092AFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02611D9A1EEA5317009714B8 /* Assets.xcassets */; };
 		A68E0C2B217190810092AFA9 /* Video_001.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A68E0C2A217190810092AFA9 /* Video_001.mp4 */; };
 		A68E0C2D2171B8200092AFA9 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68E0C2C2171B8200092AFA9 /* MetalView.swift */; };
+		D155F490217205BE00349F61 /* UIView+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D155F48F217205BE00349F61 /* UIView+Fill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		A68E0C242170FE380092AFA9 /* MovieIputSourceConfiguratio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieIputSourceConfiguratio.swift; sourceTree = "<group>"; };
 		A68E0C2A217190810092AFA9 /* Video_001.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Video_001.mp4; sourceTree = "<group>"; };
 		A68E0C2C2171B8200092AFA9 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		D155F48F217205BE00349F61 /* UIView+Fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Fill.swift"; sourceTree = "<group>"; };
 		E351DFB82A8B67F9777DD149 /* Pods-VisionDetection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionDetection.debug.xcconfig"; path = "Target Support Files/Pods-VisionDetection/Pods-VisionDetection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				A68E0C242170FE380092AFA9 /* MovieIputSourceConfiguratio.swift */,
 				A68E0C222170EA390092AFA9 /* CameraIputSourceConfiguration.swift */,
 				A68E0C2C2171B8200092AFA9 /* MetalView.swift */,
+				D155F48F217205BE00349F61 /* UIView+Fill.swift */,
 				A68E0C2A217190810092AFA9 /* Video_001.mp4 */,
 				02611D971EEA5317009714B8 /* Main.storyboard */,
 				02611D9A1EEA5317009714B8 /* Assets.xcassets */,
@@ -239,6 +242,7 @@
 				A68E0C212170B1B80092AFA9 /* IputSourceConfiguration.swift in Sources */,
 				02611DA61EEA5683009714B8 /* PreviewView.swift in Sources */,
 				A68E0C252170FE380092AFA9 /* MovieIputSourceConfiguratio.swift in Sources */,
+				D155F490217205BE00349F61 /* UIView+Fill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
