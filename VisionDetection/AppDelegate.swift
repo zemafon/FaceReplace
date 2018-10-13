@@ -15,3 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+internal extension AppDelegate {
+     enum AppRunnerDeviceType {
+        case simulator
+        case device
+    }
+
+ class var deviceType: AppRunnerDeviceType! {
+    var type: AppRunnerDeviceType
+        #if targetEnvironment(simulator)
+        type = AppRunnerDeviceType.simulator
+        #else
+        type = AppRunnerDeviceType.device
+        #endif
+
+        return type
+    }
+}

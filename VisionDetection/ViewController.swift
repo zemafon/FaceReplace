@@ -27,6 +27,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if AppDelegate.deviceType == .simulator {
+            self.sourceTypeSegmentedControl.setEnabled(false, forSegmentAt:0)
+            self.sourceTypeSegmentedControl.selectedSegmentIndex = 1
+        }
+
         self.updateInputSourceConfiguration()
     }
 
@@ -96,7 +101,7 @@ class ViewController: UIViewController {
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+    
     }
 }
 
