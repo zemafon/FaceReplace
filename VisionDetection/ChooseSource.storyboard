@@ -62,6 +62,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9a-HF-8o9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neu-yo-Dvr" customClass="PreviewView" customModule="VisionDetection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,6 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="s9a-HF-8o9" secondAttribute="trailing" id="13Y-MM-Lj0"/>
                             <constraint firstItem="CG6-9D-NAn" firstAttribute="centerY" secondItem="kCs-wp-dkL" secondAttribute="centerY" constant="30" id="2oj-8f-9gT"/>
                             <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="Neu-yo-Dvr" secondAttribute="trailing" id="4ds-0Z-gZO"/>
                             <constraint firstItem="kCs-wp-dkL" firstAttribute="top" secondItem="Neu-yo-Dvr" secondAttribute="top" constant="20" id="AXR-Tg-UNN"/>
@@ -91,11 +96,15 @@
                             <constraint firstItem="kCs-wp-dkL" firstAttribute="bottom" secondItem="Neu-yo-Dvr" secondAttribute="bottom" id="RBw-R2-agG"/>
                             <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="CG6-9D-NAn" secondAttribute="trailing" constant="8" id="V5O-wI-evv"/>
                             <constraint firstItem="kCs-wp-dkL" firstAttribute="trailing" secondItem="d6I-uj-Hw1" secondAttribute="trailing" constant="8" id="XM4-UE-bPw"/>
+                            <constraint firstItem="kCs-wp-dkL" firstAttribute="bottom" secondItem="s9a-HF-8o9" secondAttribute="bottom" id="c5p-D0-yUB"/>
+                            <constraint firstItem="s9a-HF-8o9" firstAttribute="top" secondItem="kCs-wp-dkL" secondAttribute="top" id="oGO-lr-AOA"/>
                             <constraint firstItem="d6I-uj-Hw1" firstAttribute="centerY" secondItem="kCs-wp-dkL" secondAttribute="centerY" constant="-30" id="ra5-94-9SB"/>
+                            <constraint firstItem="s9a-HF-8o9" firstAttribute="leading" secondItem="kCs-wp-dkL" secondAttribute="leading" id="vUM-aq-v9s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kCs-wp-dkL"/>
                     </view>
                     <connections>
+                        <outlet property="playerContainerView" destination="s9a-HF-8o9" id="mRY-Ee-me2"/>
                         <outlet property="plusButton" destination="d6I-uj-Hw1" id="qyP-lt-uKX"/>
                         <outlet property="previewView" destination="Neu-yo-Dvr" id="lAa-AX-nFt"/>
                         <outlet property="recButton" destination="CG6-9D-NAn" id="zmo-wb-m1B"/>

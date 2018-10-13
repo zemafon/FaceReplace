@@ -17,6 +17,7 @@ class VideoController: UIViewController {
     var sourceType: InputSourceType?
     var documentInteractionController: UIDocumentInteractionController!
     
+    @IBOutlet weak var playerContainerView: UIView!
     @IBOutlet weak var previewView: PreviewView!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var recButton: UIButton!
@@ -87,15 +88,12 @@ extension VideoController {
             addChild(playerController)
             willMove(toParent: self)
             playerView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(playerView)
+            playerContainerView.addSubview(playerView)
             playerController.contentOverlayView?.addSubview(previewView)
             didMove(toParent: self)
             
-            view.fillView(subView: playerView)
+            playerContainerView.fillView(subView: playerView)
             playerController.contentOverlayView?.fillView(subView: previewView)
-            
-            view.bringSubviewToFront(plusButton)
-            view.bringSubviewToFront(recButton)
         }
         if let player = self.playerController.player {
             self.videoSourcefaceTracker = MovieIputSourceConfiguration(player: player, videoURL: self.videoURL)
