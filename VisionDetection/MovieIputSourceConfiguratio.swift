@@ -10,12 +10,16 @@ import UIKit
 import AVFoundation
 import Vision
 
+public typealias MovieIputSourceTrackingHandler = (CVPixelBuffer, CMTime) -> Void
+
 class MovieIputSourceConfiguration: IputSourceConfiguration
 {
     private static var videoItemStatusChangedContext = 0
     
     var player: AVPlayer
     var videoURL: URL
+
+    public var handleBufferFrame MovieIputSourceTrackingHandler
 
     lazy var concretLayer: AVPlayerLayer! = {
         return self.sourceVideoLayer as! AVPlayerLayer
@@ -89,7 +93,7 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
         return dl
     }()
 
-    public override func start(completion: ((Bool) -> Void)?) {
+    public override func start (completion: ((Bool) -> Void)?) {
         super.start { (result) in
             if result {
                 self.displayLink.isPaused = false
@@ -100,7 +104,7 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
         }
     }
 
-    public override func stop() {
+    public override func stop () {
         super.stop()
 
         self.player.pause()
@@ -108,7 +112,7 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
         self.displayLink.isPaused = true
     }
 
-    @objc func updateFrameSet(_ link: CADisplayLink) {
+    @objc func updateFrameSet (_ link: CADisplayLink) {
         let nextVSync = link.timestamp + link.duration
 
         let videoOutput = self.playerItemVideoOutput!
