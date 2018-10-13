@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import RSKImageCropper
 
 class ViewController: UIViewController {
     @IBOutlet weak var sourceTypeSegmentedControl : UISegmentedControl!
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var plussButton: UIButton!
 
     var sourceType: InputSourceType?
+    var documentInteractionController: UIDocumentInteractionController!
 
     private var videoSourcefaceTracker: IputSourceConfiguration? {
         didSet {
@@ -97,11 +99,36 @@ class ViewController: UIViewController {
         imagePicker.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(imagePicker, animated: false, completion: nil)
     }
+    
+    @IBAction func shareButtonTap(_ sender: UIButton) {
+        if let url = Bundle.main.url(forResource: "Video_001", withExtension: "mp4") {
+            documentInteractionController = UIDocumentInteractionController(url: url)
+            documentInteractionController.presentOptionsMenu(from: .zero, in: view, animated: true)
+        }
+    }
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true) {
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                let cropController = RSKImageCropViewController(image: pickedImage)
+                cropController.delegate = self
+                self.present(cropController, animated: true, completion: nil)
+            }
+        }
+    }
+}
+
+extension ViewController : RSKImageCropViewControllerDelegate {
+    func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
+        dismiss(animated: true, completion: nil)
+    }
     
+    func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect, rotationAngle: CGFloat) {
+        dismiss(animated: true) {
+            
+        }
     }
 }
 

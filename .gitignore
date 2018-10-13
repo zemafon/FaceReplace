@@ -85,3 +85,10 @@ VisionDetection.xcodeproj/xcuserdata/alexanderchulanov.xcuserdatad/xcschemes/xcs
 VisionDetection.xcworkspace/contents.xcworkspacedata
 VisionDetection.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 VisionDetection.xcworkspace/xcuserdata/alexanderchulanov.xcuserdatad/UserInterfaceState.xcuserstate
+xcschememanagement.plist
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcshareddata/xcschemes/Pods-VisionDetection.xcscheme
+Pods/Pods.xcodeproj/xcshareddata/xcschemes/RSKImageCropper.xcscheme
+Pods/Target Support Files/Pods-VisionDetection/Info.plist
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-resources.sh
+Pods/Target Support Files/RSKImageCropper/Info.plist
