@@ -23,7 +23,23 @@
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJU-kI-TMg" customClass="PreviewView" customModule="VisionDetection" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddi-QT-155">
+                                        <rect key="frame" x="8" y="444" width="102" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="BWh-jA-qXe"/>
+                                        </constraints>
+                                        <state key="normal" title="run metal"/>
+                                        <connections>
+                                            <segue destination="1Yl-ge-9lh" kind="presentation" id="Zfb-Zd-J2w"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ddi-QT-155" firstAttribute="leading" secondItem="DJU-kI-TMg" secondAttribute="leadingMargin" id="Hy3-0f-h3Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ddi-QT-155" secondAttribute="bottom" constant="193" id="IOr-gH-KxV"/>
+                                </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7YZ-vr-Fv9">
                                 <rect key="frame" x="16" y="28" width="343" height="29"/>
@@ -90,6 +106,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Movie Viewer Controller-->
+        <scene sceneID="5y6-zT-S3v">
+            <objects>
+                <viewController id="1Yl-ge-9lh" customClass="MovieViewerController" customModule="VisionDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bK2-y4-qEe"/>
+                        <viewControllerLayoutGuide type="bottom" id="67Z-YT-9iz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Vz-WB-4fn" customClass="MetalView" customModule="VisionDetection">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="9Vz-WB-4fn" id="4fV-62-Y0T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MuY-ja-Xyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="139"/>
         </scene>
     </scenes>
 </document>
