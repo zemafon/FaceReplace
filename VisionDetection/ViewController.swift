@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sourceTypeSegmentedControl : UISegmentedControl!
     @IBOutlet weak var trackingTypeSegmentedControl : UISegmentedControl!
     @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var plussButton: UIButton!
 
     var sourceType: InputSourceType?
 
@@ -81,6 +82,21 @@ class ViewController: UIViewController {
 
     @IBAction func UpdateDetectionType(_ sender: UISegmentedControl) {
         updateInputSourceConfiguration()
+    }
+    
+    @IBAction func plussButtonTap(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.present(imagePicker, animated: false, completion: nil)
+    }
+}
+
+extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
     }
 }
 

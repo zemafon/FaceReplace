@@ -45,6 +45,14 @@
                                     <action selector="UpdateDetectionType:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wgk-tt-YUK"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXi-O6-C6z">
+                                <rect key="frame" x="172.5" y="576" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="plussButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SyH-Te-vf4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -54,13 +62,16 @@
                             <constraint firstItem="7YZ-vr-Fv9" firstAttribute="leading" secondItem="6z8-Eo-Ydy" secondAttribute="leading" id="H5q-8V-CCv"/>
                             <constraint firstItem="7YZ-vr-Fv9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="K5d-K8-r4V"/>
                             <constraint firstItem="7YZ-vr-Fv9" firstAttribute="centerX" secondItem="DJU-kI-TMg" secondAttribute="centerX" id="OT9-DU-kGc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WXi-O6-C6z" secondAttribute="bottom" constant="50" id="SqO-QP-R8R"/>
                             <constraint firstItem="DJU-kI-TMg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eQU-Sm-2G5"/>
                             <constraint firstItem="7YZ-vr-Fv9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="f8x-ww-Ush"/>
                             <constraint firstItem="7YZ-vr-Fv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lxl-EF-mw9"/>
+                            <constraint firstItem="WXi-O6-C6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="os6-lg-jEm"/>
                             <constraint firstItem="DJU-kI-TMg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tPL-57-auH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="plussButton" destination="WXi-O6-C6z" id="Of6-Fe-6xU"/>
                         <outlet property="previewView" destination="DJU-kI-TMg" id="0gd-Nq-oNQ"/>
                         <outlet property="sourceTypeSegmentedControl" destination="7YZ-vr-Fv9" id="i1X-Mh-jT1"/>
                         <outlet property="trackingTypeSegmentedControl" destination="6z8-Eo-Ydy" id="2Oj-yL-yKs"/>
