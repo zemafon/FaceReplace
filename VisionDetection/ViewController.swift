@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var plussButton: UIButton!
 
     var sourceType: InputSourceType?
+    var documentInteractionController: UIDocumentInteractionController!
 
     private var videoSourcefaceTracker: IputSourceConfiguration? {
         didSet {
@@ -92,6 +93,13 @@ class ViewController: UIViewController {
         imagePicker.allowsEditing = false
         imagePicker.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(imagePicker, animated: false, completion: nil)
+    }
+    
+    @IBAction func shareButtonTap(_ sender: UIButton) {
+        if let url = Bundle.main.url(forResource: "Video_001", withExtension: "mp4") {
+            documentInteractionController = UIDocumentInteractionController(url: url)
+            documentInteractionController.presentOptionsMenu(from: .zero, in: view, animated: true)
+        }
     }
 }
 
