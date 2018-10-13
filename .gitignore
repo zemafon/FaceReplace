@@ -1,0 +1,87 @@
+Podfile.lock
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/alexanderchulanov.xcuserdatad/xcschemes/Pods-VisionDetection.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/alexanderchulanov.xcuserdatad/xcschemes/RSKImageCropper.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/alexanderchulanov.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/RSKImageCropper/LICENSE
+Pods/RSKImageCropper/README.md
+Pods/RSKImageCropper/RSKImageCropper/CGGeometry+RSKImageCropper.h
+Pods/RSKImageCropper/RSKImageCropper/CGGeometry+RSKImageCropper.m
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropper.h
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropper.modulemap
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropViewController+Protected.h
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropViewController.h
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropViewController.m
+Pods/RSKImageCropper/RSKImageCropper/RSKImageScrollView.h
+Pods/RSKImageCropper/RSKImageCropper/RSKImageScrollView.m
+Pods/RSKImageCropper/RSKImageCropper/RSKInternalUtility.h
+Pods/RSKImageCropper/RSKImageCropper/RSKInternalUtility.m
+Pods/RSKImageCropper/RSKImageCropper/RSKTouchView.h
+Pods/RSKImageCropper/RSKImageCropper/RSKTouchView.m
+Pods/RSKImageCropper/RSKImageCropper/UIApplication+RSKImageCropper.h
+Pods/RSKImageCropper/RSKImageCropper/UIApplication+RSKImageCropper.m
+Pods/RSKImageCropper/RSKImageCropper/UIImage+RSKImageCropper.h
+Pods/RSKImageCropper/RSKImageCropper/UIImage+RSKImageCropper.m
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ar.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/bg.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/bs.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ca.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/cs.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/da.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/de.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/el.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/en.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/es.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/et.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/fi.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/fil.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/fr.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/he.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/hi.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/hr.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/hu.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/id.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/it.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ja.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ko.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/lt.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/lv.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/mk.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ms.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/nb.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/nl.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/pl.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/pt.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/pt_BR.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/pt_PT.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ro.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/ru.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/sk.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/sl.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/sr.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/sv.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/th.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/tr.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/uk.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/vi.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/zh-Hans.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/zh-Hant.lproj/RSKImageCropper.strings
+Pods/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle/zh.lproj/RSKImageCropper.strings
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-acknowledgements.markdown
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-acknowledgements.plist
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-dummy.m
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-frameworks.sh
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-Info.plist
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection-umbrella.h
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection.debug.xcconfig
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection.modulemap
+Pods/Target Support Files/Pods-VisionDetection/Pods-VisionDetection.release.xcconfig
+Pods/Target Support Files/RSKImageCropper/RSKImageCropper-dummy.m
+Pods/Target Support Files/RSKImageCropper/RSKImageCropper-Info.plist
+Pods/Target Support Files/RSKImageCropper/RSKImageCropper-prefix.pch
+Pods/Target Support Files/RSKImageCropper/RSKImageCropper.modulemap
+Pods/Target Support Files/RSKImageCropper/RSKImageCropper.xcconfig
+VisionDetection.xcodeproj/project.xcworkspace/xcuserdata/alexanderchulanov.xcuserdatad/UserInterfaceState.xcuserstate
+VisionDetection.xcodeproj/xcuserdata/alexanderchulanov.xcuserdatad/xcschemes/xcschememanagement.plist
+VisionDetection.xcworkspace/contents.xcworkspacedata
