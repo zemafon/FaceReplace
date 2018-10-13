@@ -20,9 +20,9 @@ internal class MovieViewerController: UIViewController {
         return self.view as! MetalView
     }()
 
-    let moviewSourceTracker: MovieIputSourceConfiguration! = {
+    lazy var moviewSourceTracker: MovieIputSourceConfiguration! = {
 
-        var source: MovieIputSourceConfiguration? = nil
+        var source: MovieIputSourceConfiguration! = nil
 
         guard let videoURL = Bundle.main.url(forResource: "Video_001", withExtension:"mp4") else {
             print("MovieIputSourceConfiguration initialisation fail")
@@ -31,11 +31,10 @@ internal class MovieViewerController: UIViewController {
 
         let player = AVPlayer(url:videoURL)
 
-        source = MovieIputSourceConfiguration(player:player, videoURL
-            :videoURL)
-//        source!.handleBufferFrame = self.fetchFrameBuffer
+        source = MovieIputSourceConfiguration(player: player, videoURL: videoURL)
+        source.handleBufferFrame = self.fetchFrameBuffer
 
-        return source!
+        return source
     }()
 
     override func viewDidLoad() {
@@ -68,7 +67,7 @@ internal class MovieViewerController: UIViewController {
         moviewSourceTracker.stop()
     }
 
-    func fetchFrameBuffer (pixelBuffer: CVPixelBuffer, time: CMTime) {
+    public func fetchFrameBuffer (_ pixelBuffer: CVPixelBuffer, _ time: CMTime) -> Void {
         self.canvas.pixelBuffer = pixelBuffer
         self.canvas.inputTime = time.seconds
     }
@@ -84,7 +83,5 @@ extension MTLTexture {
         let groupCount = threadGroupCount()
         return MTLSizeMake(Int(self.width) / groupCount.width, Int(self.height) / groupCount.height, 1)
     }
-
-    
 }
 
