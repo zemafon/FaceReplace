@@ -14,6 +14,7 @@ import RSKImageCropper
 
 class VideoController: UIViewController {
     var videoURL: URL!
+    var seekTime: TimeInterval!
     var sourceType: InputSourceType?
     var documentInteractionController: UIDocumentInteractionController!
     
@@ -97,6 +98,11 @@ extension VideoController {
         }
         if let player = self.playerController.player {
             self.videoSourcefaceTracker = MovieIputSourceConfiguration(player: player, videoURL: self.videoURL)
+            
+            if let movieSourcefaceTracker = videoSourcefaceTracker as? MovieIputSourceConfiguration {
+                let cmSeekTime = CMTimeMakeWithSeconds(seekTime, preferredTimescale: 600)
+                movieSourcefaceTracker.seekTime = cmSeekTime
+            }
         }
         
         self.videoSourcefaceTracker!.setup()

@@ -11,6 +11,7 @@ import UIKit
 class ChooseSourceController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var videoURL: URL!
+    var seekTime: TimeInterval!
     
     override func viewDidLoad() {
     }
@@ -28,28 +29,34 @@ class ChooseSourceController: UIViewController {
     
     func showVideo(index: Int) {
         let url: URL?
+        let seekTime: TimeInterval?
         switch index {
         case 1:
             url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
+            seekTime = 3780
         case 2:
             url = URL(string: "https://meta.vcdn.biz/7019e575ad8d00a0b56d563724c3a1c5_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/86931/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
+            seekTime = 0
         default:
             url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
+            seekTime = 0
         }
         
         guard let videoURL = url else { return }
         
-        showFaceReplaceController(url: videoURL)
+        showFaceReplaceController(url: videoURL, seekTime: seekTime ?? 0)
     }
     
-    func showFaceReplaceController(url: URL) {
+    func showFaceReplaceController(url: URL, seekTime : TimeInterval = 0 ) {
         videoURL = url
+        self.seekTime = seekTime
         performSegue(withIdentifier: "showVideo", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let videoController = segue.destination as? VideoController else { return }
         videoController.videoURL = videoURL
+        videoController.seekTime = seekTime
     }
 }
 

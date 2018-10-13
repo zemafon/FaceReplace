@@ -18,6 +18,7 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
     
     var player: AVPlayer
     var videoURL: URL
+    public var seekTime: CMTime?
 
     public var handleBufferFrame: MovieIputSourceTrackingHandler?
 
@@ -98,6 +99,9 @@ class MovieIputSourceConfiguration: IputSourceConfiguration
         super.start { (result) in
             if result {
                 self.displayLink.isPaused = false
+                if let seekTime = self.seekTime {
+                    self.player.seek(to: seekTime)
+                }
                 self.player.play()
             }
 
