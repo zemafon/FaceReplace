@@ -31,6 +31,8 @@ class ChooseSourceController: UIViewController {
         switch index {
         case 1:
             url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
+        case 2:
+            url = URL(string: "https://meta.vcdn.biz/7019e575ad8d00a0b56d563724c3a1c5_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/86931/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
         default:
             url = URL(string: "https://meta.vcdn.biz/c3b8a81f058beaf8f0b310f3b282beab_megogo/vod/hls/b/450_900_1350_1500_2000/u_sid/0/o/85141/u_uid/7032521/u_vod/3/u_device/hackathon18/a/8/type.amlst/playlist.m3u8")
         }
@@ -90,6 +92,8 @@ extension ChooseSourceController: UITableViewDataSource {
             cellTitle = "Video Library"
         case 1:
             cellTitle = "From Parise with love"
+        case 2:
+            cellTitle = "Rambo"
         default:
             cellTitle = ""
         }
