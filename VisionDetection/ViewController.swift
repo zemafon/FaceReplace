@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  VisionDetection
 //
-//  Created by Wei Chieh Tseng on 09/06/2017.
-//  Copyright © 2017 Willjay. All rights reserved.
+//  Created by Ilya Dzhantemirov on 09/06/2017.
+//  Copyright © 2017 Home. All rights reserved.
 //
 
 import UIKit

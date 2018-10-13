@@ -3,7 +3,7 @@
 //  VisionDetection
 //
 //  Created by Ilya Dzhantemirov on 10/13/18.
-//  Copyright © 2018 Willjay. All rights reserved.
+//  Copyright © 2018 Home. All rights reserved.
 //
 
 import Foundation
